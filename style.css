@@ -40,6 +40,11 @@ body {
     transition: transform 0.3s;
   }
 
+.toggle-button-text {
+    font-size: 0.7em;
+    white-space: nowrap;
+} 
+
 /* Styles for the toggle button when active */
 .toggle-button.active {
     background-color: #2196F3;
