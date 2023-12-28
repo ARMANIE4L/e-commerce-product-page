@@ -34,61 +34,79 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let navbarContainer = document.querySelector("#navbarContainer")
     let collapse = document.querySelector("#nav-list").innerHTML
     let collapse2 = document.querySelector("#nav-item")
+    let navbarBrand = document.querySelector("h1")
+    let navbarIcon = document.querySelector(".navbar-toggler-icon")
+    var toggleButton = document.querySelector(".toggle-button");
+    let toggleText = document.querySelector(".toggle-button-text")
+    let headerNav = document.querySelector("#header-nav")
+    var body = document.body;
     
 
-    //TARGET THE NAVBAR EXPANSION
-    navbarContainerMain.style.display = "none"
-    
-    navbarToggle.addEventListener("click", function () {
-        navbarContainerMain.style = 'width: 100%; height: 100vh; position: absolute; left: 0;  top: 0;'
-        navbarContainerMain.style.backgroundColor = 'rgba(0, 0, 0, 0.8)'
-        navbarContainer.innerHTML = '<img src="./images/icon-close.svg" id="close">' + collapse
-        navbarContainer.style = 'position: absolute; left: 0;  top: 0; background-color: white; height: 100vh; width: 60%;'
-    })
-    
-    
+   // CHANGE THE BACKGROUND COLOR
+function toggleTheme() {
+    toggleButton.classList.toggle("active");
+    body.classList.toggle("active");
+    headerNav.classList.toggle("active");
+    navbarIcon.classList.toggle("active");
+    navbarBrand.classList.toggle("active");
+    inputField.classList.toggle("active");
+    toggleText.classList.toggle("active");
+    navbarContainer.classList.toggle("active");
+}
 
-    // TARGET THE CLOSE ICON
-    navbarContainer.addEventListener("click", function (event) {
-        if (event.target.id === "close") {
-            navbarContainer.style.display = (navbarContainer.style.display === 'none') ? 'block' : 'none'; 
-            navbarContainerMain.style.display = (navbarContainerMain.style.display === 'none') ? 'block' : 'none'; 
-        }
-    })
+toggleButton.addEventListener("click", function () {
+    toggleTheme();
+    // CHANGE TOGGLE TEXT
+    if (toggleButton.classList.contains("active")) {
+        toggleText.textContent = 'Light Mode';
+        navbarContainer.style.backgroundColor = 'black';
+    } else {
+        toggleText.textContent = "Dark Mode";
+        navbarContainer.style.backgroundColor = ''; // Reset the background color
+    }
+});
 
-    //CLOSE THE NAVBAR EXPANSION WHEN LOST FOCUS
-    navbarContainerMain.addEventListener("click", function (event) {
-        if (event.target !== navbarContainer) {
-            if (event.target !== collapse2) {
-                 navbarContainer.style.display = 'none'
-                 navbarContainerMain.style.display = 'none'
-            }
-        }
-    })
-    
-    //Target background
-    enlargedImageCont.style.display = 'none'
-    imageContainer.addEventListener("click", function () {
-        thumbnailEnlargeCont.style = "position: absolute; top: 0px; width: 100%;  padding: 30%; height: 100%;"
-        thumbnailEnlargeCont.style.backgroundColor = "rgba(0, 0, 0, 0.8)"
-        enlargedImageCont.style = 'display: block;'
-        enlargedImageCont.innerHTML = '<div class="icon-cont d-block d-sm-block"><img src="./images/icon-previous.svg" class="icon" id="dynapreviousButton"><img src="./images/icon-next.svg" class="icon2 " id="dynanextButton"></div>'
-        enlargedImageCont.style.backgroundImage = `url('${images[0]}')`
-        thumbnailEnlargeCont.innerHTML = ' <div id="closeIconCont"><img src="./images/icon-close.svg" id="closeIcon"></div>' + '<div id="thumbnailCont"><img class= "dynathumbnail" src="./images/image-product-1-thumbnail.jpg" id="dynathumbnail1" height="70px"> <img class="dynathumbnail" src="./images/image-product-2-thumbnail.jpg" id="dynathumbnail2" height="70px"> <img class="dynathumbnail" src="./images/image-product-3-thumbnail.jpg" id="dynathumbnail3" height="70px"><img class="dynathumbnail" src="./images/image-product-4-thumbnail.jpg" id="dynathumbnail4" height="70px"></div>'
-    })
 
-    thumbnailEnlargeCont.classList.add('dynathumbnail')
-    document.body.appendChild(thumbnailEnlargeCont)
+// TARGET THE NAVBAR EXPANSION
+navbarContainerMain.style.display = "none";
 
-   // REMOVE THE THUMBNAILENLARGECONT WHEN LOST FOCUS
-    // thumbnailEnlargeCont.addEventListener("click", function (event) {
-    //     if (event.target.id != 'enlargedImageCont' && event.target.classList != 'dynathumbnail') {
-    //             thumbnailEnlargeCont.style.display = 'none';
-    //             enlargedImageCont.style.display = 'none';
-    //             enlargedImageCont.style.display = 'none';
-    //     }
-    // })
+navbarToggle.addEventListener("click", function () {
+    navbarContainerMain.style.cssText = 'width: 100%; height: 100vh; position: absolute; left: 0; top: 0;';
+    navbarContainerMain.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+    navbarContainer.innerHTML = '<img src="./images/icon-close.svg" id="close">' + collapse;
+    navbarContainer.style.cssText = 'position: absolute; left: 0; top: 0; background-color: white; height: 100vh; width: 60%;';
+});
 
+
+// TARGET THE CLOSE ICON
+navbarContainer.addEventListener("click", function (event) {
+    if (event.target.id === "close") {
+        navbarContainer.style.display = (navbarContainer.style.display === 'none') ? 'block' : 'none';
+        navbarContainerMain.style.display = (navbarContainerMain.style.display === 'none') ? 'block' : 'none';
+    }
+});
+
+// CLOSE THE NAVBAR EXPANSION WHEN LOST FOCUS
+navbarContainerMain.addEventListener("click", function (event) {
+    if (event.target !== navbarContainer && event.target !== collapse2) {
+        navbarContainer.style.display = 'none';
+        navbarContainerMain.style.display = 'none';
+    }
+});
+
+// Target background
+enlargedImageCont.style.display = 'none';
+imageContainer.addEventListener("click", function () {
+    thumbnailEnlargeCont.style.cssText = "position: absolute; top: 0px; width: 100%; padding: 30%; height: 100%;";
+    thumbnailEnlargeCont.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+    enlargedImageCont.style.display = 'block';
+    enlargedImageCont.innerHTML = '<div class="icon-cont d-block d-sm-block"><img src="./images/icon-previous.svg" class="icon" id="dynapreviousButton"><img src="./images/icon-next.svg" class="icon2 " id="dynanextButton"></div>';
+    enlargedImageCont.style.backgroundImage = `url('${images[0]}')`;
+    thumbnailEnlargeCont.innerHTML = ' <div id="closeIconCont"><img src="./images/icon-close.svg" id="closeIcon"></div>' + '<div id="thumbnailCont"><img class= "dynathumbnail" src="./images/image-product-1-thumbnail.jpg" id="dynathumbnail1" height="70px"> <img class="dynathumbnail" src="./images/image-product-2-thumbnail.jpg" id="dynathumbnail2" height="70px"> <img class="dynathumbnail" src="./images/image-product-3-thumbnail.jpg" id="dynathumbnail3" height="70px"><img class="dynathumbnail" src="./images/image-product-4-thumbnail.jpg" id="dynathumbnail4" height="70px"></div>';
+});
+
+thumbnailEnlargeCont.classList.add('dynathumbnail');
+document.body.appendChild(thumbnailEnlargeCont);
     
     //REMOVE THE THUMBNAILENLARGEMENT
     thumbnailEnlargeCont.addEventListener("click", function (event) {
@@ -206,12 +224,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     enlargedImageCont.addEventListener("click", function (event) {
-        if (event.target.id = 'dynanextbutton') {
-            dynanextSlide()
-        } else if (event.target.id = 'dynapreviousbutton') {
-            dynapreviousSlide()
+        if (event.target.id === "dynanextButton") {
+            dynanextSlide();
+            event.stopPropagation();
+        } else if (event.target.id === "dynapreviousButton") {
+            dynapreviousSlide();
+            event.stopPropagation();
+        } else {
+            event.preventDefault();
         }
-    })
+    });
 
     //TARGET TH INPUT FIELD
     inputField.value = "1"

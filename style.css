@@ -13,8 +13,65 @@ body {
     margin-left: 0px;
 }
 
+/* Styles for the toggle button */
+ .toggle-button {
+    display: inline-block;
+    width: 57px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 34px;
+    position: relative;
+    right: 15px;
+    margin-left: 40px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+
+  /* Styles for the toggle button handle */
+  .toggle-button::before {
+    content: '';
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 3px;
+    left: 4px;
+    transition: transform 0.3s;
+  }
+
+/* Styles for the toggle button when active */
+.toggle-button.active {
+    background-color: #2196F3;
+}
+
+/* Styles for the toggle button handle when active */
+.toggle-button.active::before {
+    transform: translateX(26px);
+}
+
+body, #header-nav, #navbar-brand, #input-field {
+    transition: background-color 0.3s;
+}
+
+body.active, #header-nav.active, #input-field.active {
+    background-color: black;
+    color: white;
+}
+#navbarContainer.active {
+    background-color: black;
+}
+
+#navbar-brand.active {
+    color: white;
+}
+.navbar-toggler-icon.active {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 .main {
     padding: 20px;
+
 }
 
 .container {
@@ -23,6 +80,7 @@ body {
     align-items: center;
     position: relative;
 }
+
 
 ul {
     display: flex;
@@ -61,6 +119,7 @@ ul {
     right: 0;
     margin-left: 10px;
     margin-right: 0px;
+    gap: 10px;
 }
 
 /* #cartContainer {
@@ -95,8 +154,9 @@ ul {
 }
 
 .navbar-brand {
-    font-size: 2rem !important;
+    font-size: 2em;
     text-decoration-line: none;
+    color: black;
 }
 
 .navbar-header a {
@@ -132,7 +192,7 @@ ul {
 }
 
 .profile-picture {
-    margin-left: 25px;
+    margin-left: px;
 }
 
 .profile-picture:hover {
@@ -321,16 +381,9 @@ opacity: 80%;
 .minus, .plus {
     display: flex;
     border-color: transparent;
-    background-color: white;
+    background-color: transparent;
     transition: all 0.2s;
 }
-
-.minus:hover, .plus:hover {
-    background-color: rgb(209, 205, 205);
-    padding: 3px;
-    margin-right: 3px;
-}
-
 
  #thumbnailEnlargement {
     background-size: cover;
@@ -353,7 +406,6 @@ opacity: 80%;
 
 
 #enlargedImageCont {
-    /* background-image: url(./images/image-product-1.jpg); */
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 14px;
@@ -410,6 +462,7 @@ opacity: 80%;
     border-radius: 6px;
     margin: 0px 50px;
     color: gray;
+    transition: ease-in-out  1s;
 }
 
 
@@ -565,6 +618,7 @@ opacity: 80%;
 
     #cart-profile-wrapper {
         flex-wrap: nowrap;
+        gap: 6px;
     }
     .container {
         max-width: 100px;
@@ -622,27 +676,63 @@ opacity: 80%;
 
 /* extra small device */
  @media (min-width: 300px) and (max-width:600px) {
-    #cart-profile-wrapper {
-       order: 1;
+#cart-profile-wrapper {
+       /* order: 1; */
        flex-wrap: nowrap;
-    }
-    .container {
-        max-width: 100%;
-    }
+       right: 0px;
+       max-width: 60px;
+       gap: 1px;
+       margin-left: 0px;
+}
 
-    #header-nav {
-        flex-direction: column;
-    }
-    .navbar-collapse {
-        width: 100%;
-        
-    }
+#cartContainer {
+    margin-right: 0px;
+}
 
-    #products {
-        float: none;
-        margin-right: 0px;
-        width: 100%;
-        padding: 0%;
+/* Styles for the toggle button */
+ .toggle-button {
+    margin-left: 70px;
+    width: 46px;
+    height: 27px;
+    background-color: #ccc;
+    border-radius: 34px;
+}
+
+/* Styles for the toggle button handle */
+.toggle-button::before {
+    width: 15px;
+    height: 18px;
+    top: 4px;
+    left: 4px;
+    transition: transform 0.3s;
+}
+
+.toggle-button-text {
+    font-size: 0.6em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    white-space: nowrap;
+}
+
+#navbar-brand {
+    font-size: 1.5em;
+    margin-right: 0px;
+}
+.container {
+    max-width: 100%;
+}
+
+#header-nav {
+    flex-direction: column;
+}
+.navbar-collapse {
+    width: 100%;
+}
+
+#products {
+    float: none;
+    margin-right: 0px;
+    width: 100%;
+    padding: 0%;
     }
 
     main {

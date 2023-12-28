@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./bootstrap.css">
   <script src="./script.js"></script>
-  <!-- <script src="./bootstrap.js"></script> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 </head>
@@ -46,13 +45,18 @@
               <a href="#">Contact</a>
             </li>
           </ul>
-        </div>
+      </div>
         <div id="cart-profile-wrapper">
           <div id="cartContainer">
             <p id="numOfItemsAdded"></p>
             <img alt="cart" src="./images/icon-cart.svg" class="cart d-block">
           </div>
          <img alt="profile" src="./images/image-avatar.png" class="profile-picture d-block" height="40px">
+        </div>
+        
+        <div class="toggle-button">
+          <br>
+          <span class="toggle-button-text">Dark Mode</span>
         </div>
       </div>
       
@@ -70,17 +74,17 @@
     <section class="" id="products">
       <div class="image-cont" id="imageContainer">
         <div class="icon-cont d-block d-sm-block">
-          <img src="./images/icon-previous.svg" class="icon" id="previousButton">
-          <img src="./images/icon-next.svg" class="icon2 " id="nextButton">
+          <img src="./images/icon-previous.svg" class="icon" id="previousButton" alt="previous-icon">
+          <img src="./images/icon-next.svg" class="icon2 " id="nextButton" alt="next-icon">
       </div>
         </div>
       
 
       <section class="img-thumbnail-cont ">
-        <img class="d-none d-sm-none d-md-block thumbnail" src="./images/image-product-1-thumbnail.jpg" id="thumbnail1" height="70px">
-        <img class="d-none d-sm-none d-md-block thumbnail" src="./images/image-product-2-thumbnail.jpg" id="thumbnail2" height="70px">
-        <img class="d-none d-sm-none d-md-block thumbnail" src="./images/image-product-3-thumbnail.jpg" id="thumbnail3" height="70px">
-        <img class="d-none d-sm-none d-md-block thumbnail" src="./images/image-product-4-thumbnail.jpg" id="thumbnail4" height="70px">
+        <img class="d-none d-sm-none d-md-block thumbnail" src="./images/image-product-1-thumbnail.jpg" id="thumbnail1" height="70px" alt="thumbnail">
+        <img class="d-none d-sm-none d-md-block thumbnail" src="./images/image-product-2-thumbnail.jpg" id="thumbnail2" height="70px" alt="thumbnail">
+        <img class="d-none d-sm-none d-md-block thumbnail" src="./images/image-product-3-thumbnail.jpg" id="thumbnail3" height="70px" alt="thumbnail">
+        <img class="d-none d-sm-none d-md-block thumbnail" src="./images/image-product-4-thumbnail.jpg" id="thumbnail4" height="70px" alt="thumbnail">
       </section>
     </section>
     <section class="section2">
@@ -100,12 +104,12 @@
       <p class="slashed-price">$250.00</p>
 
       <div class="number-input">
-        <button class="minus" id="minus">
-          <img src="./images/icon-minus.svg">
+        <button class="minus" id="minus" aria-label="name">
+          <img src="./images/icon-minus.svg" alt="minus-icon">
         </button>
         <input type="number" placeholder="0" id="input-field" step="1">
-        <button class="plus" id="plus">
-          <img src="./images/icon-plus.svg">
+        <button class="plus" id="plus" aria-label="name">
+          <img src="./images/icon-plus.svg" alt="plus-icon">
         </button>
       </div>
       <button id="add">
