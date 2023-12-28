@@ -41,9 +41,9 @@ body {
   }
 
 .toggle-button-text {
-    font-size: 0.7em;
+    font-size: 0.6em;
     white-space: nowrap;
-} 
+}
 
 /* Styles for the toggle button when active */
 .toggle-button.active {
