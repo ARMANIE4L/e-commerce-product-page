@@ -1,123 +1,259 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Frontend Mentor | E-commerce product page</title>
+
   <link rel="stylesheet" href="./style.css">
+
   <link rel="stylesheet" href="./bootstrap.css">
+
   <script src="./script.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <link rel="stylesheet" href="/restaurant site/bootstrap-icons-1.11.0/">
 
 </head>
+
+
+
 <body>
+
   <header>
+
     <nav id="header-nav" class="navbar navbar-expand-md">
+
       <div class="container float-end">
+
         <div class="head-cont">
+
           <button class="navbar-toggler d-lg-none" type="button"  id="navbarToggle">
+
             <span class="navbar-toggler-icon"></span>
+
           </button>
+
          
+
         
+
           <div class="navbar-header">
+
             <a href="index.html" class="float-start">
+
               <h1 class="navbar-brand" id="navbar-brand">sneakers</h1>
+
             </a>
+
           </div>
+
         </div>
+
+
 
         <div class="collapse navbar-collapse justify-content-end align-self-start" id="navbarNav">
+
           <ul id="nav-list" class="navbar-nav">
+
             <li class="nav-item d-block d-sm-block" id="nav-item">
+
               <a href="#">Collections</a>
+
             </li>
+
             <li class="nav-item d-block d-sm-block" id="nav-item">
+
               <a href="#">Men</a>
+
             </li>
+
             <li class="nav-item d-block d-sm-block" id="nav-item">
+
               <a href="#">Women</a>
+
             </li>
+
             <li class="nav-item d-block d-sm-block" id="nav-item">
+
               <a href="#">About</a>
+
             </li>
+
             <li class="nav-item d-block d-sm-block" id="nav-item">
+
               <a href="#">Contact</a>
+
             </li>
+
           </ul>
+
       </div>
+
         <div id="cart-profile-wrapper">
-          <div id="cartContainer">
-            <p id="numOfItemsAdded"></p>
-            <img alt="cart" src="./images/icon-cart.svg" class="cart d-block">
+
+          <div id="outerCartContainer">
+
+            <div id="cartContainer">
+
+              <p id="numOfItemsAdded"></p>
+
+              <img alt="cart" src="./images/icon-cart.svg" class="cart d-block">
+
+            </div>
+
           </div>
+
+    
+
          <img alt="profile" src="./images/image-avatar.png" class="profile-picture d-block" height="40px">
-        </div>
-        
-        <div class="toggle-button">
+
+
+
+         <div class="toggle-button-cont" id="toggleButtonCont">
+
+          <img src="./images/moon-icon.svg" class="toggle-button">
+
           <br>
-          <span class="toggle-button-text">Dark Mode</span>
+
         </div>
+
+        </div>
+
+        
+
+        
+
       </div>
+
       
+
     </nav>
+
   </header>
-  <div id="cartContentDisplayBox"></div>
-    <div id="biggerEnlargement" >
-      <div id="enlargedImageCont" ></div>
-     <div id="thumbnailEnlargeCont" >
-      <div id="thumbnailEnlargement" ></div>
-    </div>
+
+  <div id="outerCartContentDisplayBox">
+
+    <div id="cartContentDisplayBox"></div>
+
   </div>
 
+    <div id="biggerEnlargement" >
+
+      <div id="enlargedImageCont" ></div>
+
+     <div id="thumbnailEnlargeCont" >
+
+      <div id="thumbnailEnlargement" ></div>
+
+    </div>
+
+  </div>
+
+
+
   <main>
+
     <section class="" id="products">
+
       <div class="image-cont" id="imageContainer">
+
         <div class="icon-cont d-block d-sm-block">
+
           <img src="./images/icon-previous.svg" class="icon" id="previousButton" alt="previous-icon">
+
           <img src="./images/icon-next.svg" class="icon2 " id="nextButton" alt="next-icon">
+
       </div>
+
         </div>
+
       
+
+
 
       <section class="img-thumbnail-cont ">
+
         <img class="d-none d-sm-none d-md-block thumbnail" src="./images/image-product-1-thumbnail.jpg" id="thumbnail1" height="70px" alt="thumbnail">
+
         <img class="d-none d-sm-none d-md-block thumbnail" src="./images/image-product-2-thumbnail.jpg" id="thumbnail2" height="70px" alt="thumbnail">
+
         <img class="d-none d-sm-none d-md-block thumbnail" src="./images/image-product-3-thumbnail.jpg" id="thumbnail3" height="70px" alt="thumbnail">
+
         <img class="d-none d-sm-none d-md-block thumbnail" src="./images/image-product-4-thumbnail.jpg" id="thumbnail4" height="70px" alt="thumbnail">
+
       </section>
+
     </section>
+
     <section class="section2">
+
       <h1 class="company-name">Sneaker Company</h1>
+
       <h2 id="productName">Fall Limited Edition Sneakers</h2>
 
+
+
       <p class="description">
+
         These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+
       </p>
+
       
+
       <div class="price-cont">
+
         <p class="dollarSign">$</p>
+
         <p class="price">125.00</p>
+
         <p class="discount">50%</p>
+
         <br>
+
       </div>
+
       <p class="slashed-price">$250.00</p>
 
+
+
       <div class="number-input">
+
         <button class="minus" id="minus" aria-label="name">
+
           <img src="./images/icon-minus.svg" alt="minus-icon">
+
         </button>
+
         <input type="number" placeholder="0" id="input-field" step="1">
+
         <button class="plus" id="plus" aria-label="name">
+
           <img src="./images/icon-plus.svg" alt="plus-icon">
+
         </button>
+
       </div>
+
       <button id="add">
+
         <i class="fas fa-shopping-cart"></i> Add to cart</button>
+
           <div id="navbarContainerMain">
+
             <div id="navbarContainer" class="d-block d-sm-block "></div>
+
           </div>
+
     </section>
+
   </main>
+
 </body>
-</html>
+
+              </html>
